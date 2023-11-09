@@ -88,7 +88,7 @@ function Card() {
           repeatType: "reverse",
         }}
       >
-        🎉 Merry Mischief: Sips and Stunts 🎉
+        🎉 Do it or Drink it🎉
       </motion.h2>
 
       <motion.div

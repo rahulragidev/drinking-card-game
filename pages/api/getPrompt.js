@@ -15,7 +15,7 @@ async function generateResponse(promptText) {
         { role: "user", content: "generate drinking game task" },
         {
           role: "assistant",
-          content: "Drinking game task: " + promptText + ", do it or drink",
+          content: promptText + ", do it or drink",
         },
       ],
     });

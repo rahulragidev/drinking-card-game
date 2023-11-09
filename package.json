@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^10.16.4",
     "next": "14.0.1",
     "openai": "^4.17.0",
     "openai-node": "^1.0.5",

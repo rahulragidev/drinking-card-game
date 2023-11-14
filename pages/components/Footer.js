@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="text-orange-700 absolute bottom-4">
+    <footer className="text-orange-700 mt-8">
       <div className="container mx-auto">
         <p>Made by Rahul Ragi</p>
         <p>

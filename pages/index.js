@@ -1,10 +1,9 @@
 // pages/index.js
 import React, { useState, useEffect } from "react";
-import Logo from "./components/logo";
 import Card from "./components/Card";
 import Ad from "./components/Ad";
-import Button from "./components/Button";
 import Footer from "./components/Footer";
+import Logo from "./components/Logo";
 
 export default function Home() {
   const [prompt, setPrompt] = useState("Draw a card to start the game");

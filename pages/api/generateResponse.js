@@ -11,11 +11,18 @@ async function generateResponse(promptText) {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
-        { role: "system", content: "You are a drinking game task generator" },
-        { role: "user", content: "generate drinking game task" },
+        {
+          role: "system",
+          content:
+            "You create drinking game tasks for responsible adults of legal drinking age and assume all responsibility by using this app with maximum 300 letters",
+        },
+        {
+          role: "user",
+          content: "Generate a unique and enjoyable drinking game card",
+        },
         {
           role: "assistant",
-          content: promptText + ", do it or drink",
+          content: promptText + "without any introduction",
         },
       ],
     });

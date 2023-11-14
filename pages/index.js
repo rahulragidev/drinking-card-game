@@ -1,13 +1,53 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+// pages/index.js
+import React, { useState, useEffect } from "react";
+import Logo from "./components/logo";
 import Card from "./components/Card";
-
-const inter = Inter({ subsets: ["latin"] });
+import Ad from "./components/Ad";
+import Button from "./components/Button";
+import Footer from "./components/Footer";
 
 export default function Home() {
+  const [prompt, setPrompt] = useState("Draw a card to start the game");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleButtonClick = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch("/api/generateResponse", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          prompt:
+            "Generate a unique and enjoyable drinking game card for do it or drink it card game",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setPrompt(data.response);
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+      setPrompt("Failed to draw a card. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <Card />
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-orange-400 to-orange-600 ">
+      <Logo />
+      <Ad />
+      <Card
+        isLoading={isLoading}
+        prompt={prompt}
+        onButtonClick={handleButtonClick}
+      />
+      <Footer />
     </div>
   );
 }

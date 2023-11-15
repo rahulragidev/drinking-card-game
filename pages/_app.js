@@ -15,6 +15,10 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-2566390247263128"
+        ></meta>
       </Head>
       <Component {...pageProps} />
     </div>

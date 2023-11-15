@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import Ad from "./components/Ad";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
+import Head from "next/head";
 
 export default function Home() {
   const [prompt, setPrompt] = useState("Draw a card to start the game");
@@ -39,6 +40,13 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-orange-400 to-orange-600 ">
+      <Head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2566390247263128"
+          crossorigin="anonymous"
+        ></script>
+      </Head>
       <Logo />
       <Ad />
       <Card

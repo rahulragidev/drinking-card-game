@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Card from "./components/Card";
-import Ad from "./components/Ad";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
 import Head from "next/head";

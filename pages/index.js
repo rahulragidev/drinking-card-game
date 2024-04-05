@@ -51,12 +51,11 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-orange-400 to-orange-600 ">
       <Head></Head>
       <Logo />
-      <Ad />
       <Card
         isLoading={isLoading}
         prompt={prompt}
         onButtonClick={handleButtonClick}
-      />
+      ></Card>
       <Footer />
     </div>
   );
